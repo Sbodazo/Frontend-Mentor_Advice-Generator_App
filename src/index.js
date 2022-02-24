@@ -11,12 +11,17 @@ function getRandomIntInclusive(min, max) {
 const fetchNewAdvice = async () => {
     dice.classList.add("spin-animation");
     const randomId = getRandomIntInclusive(1, 120);
-    const response = await fetch(`https://api.adviceslip.com/advice/${randomId}`);
-    const advice = await response.json();
-    quote.textContent = `"${advice.slip.advice}"`;
-    id.textContent = advice.slip.id.toString();
+    try {
+        const response = await fetch(`https://api.adviceslip.com/advice/${randomId}`);
+        const advice = await response.json();
+        quote.textContent = `"${advice.slip.advice}"`;
+        id.textContent = advice.slip.id.toString();
+    }
+    catch (error) {
+        quote.textContent = "Something went wrong. Roll the dice again!";
+    }
     setTimeout(() => {
         dice.classList.remove("spin-animation");
-    }, 1000);
+    }, 700);
 };
 button.addEventListener("click", fetchNewAdvice);

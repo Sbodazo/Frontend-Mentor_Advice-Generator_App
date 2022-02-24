@@ -70,7 +70,7 @@ body {
 }
 
 .spin-animation {
-  animation: spin 1s linear;
+  animation: spin .8s linear;
 }
 
 .title {
