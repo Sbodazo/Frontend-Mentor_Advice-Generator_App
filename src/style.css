@@ -21,7 +21,7 @@ body {
   grid-template-rows: 1fr 3fr 1fr;
   margin-inline: 5%;
   padding: 1rem;
-  min-height: 30%;
+  height: 300px;
   max-width: 100%;
   background-color: hsl(217, 19%, 24%);
   border-radius: 5%;
